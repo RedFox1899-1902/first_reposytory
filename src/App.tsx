@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Menu from "@mui/joy/Menu";
+import MenuButton from "@mui/joy/MenuButton";
+import MenuItem from "@mui/joy/MenuItem";
+import Dropdown from "@mui/joy/Dropdown";
+import Link from "@mui/joy/Link";
+import "./App.css";
+import Posts from "./Components/Posts/Posts";
+import CreatePost from "./Components/CreatePost/CreatePost";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dropdown>
+        <MenuButton>Actions</MenuButton>
+        <Menu>
+          <MenuItem>
+            <Link href={"/posts"}>Table Posts</Link>
+          </MenuItem>
+          <MenuItem>
+            <Link href={"/create"}>Create post</Link>
+          </MenuItem>
+          <MenuItem>Add item</MenuItem>
+        </Menu>
+      </Dropdown>
+      <Routes>
+        <Route path="/posts" element={<Posts />}></Route>
+        <Route path="/create" element={<CreatePost />}></Route>
+      </Routes>
     </div>
   );
 }
