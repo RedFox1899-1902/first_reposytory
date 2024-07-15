@@ -21,7 +21,7 @@ function App() {
           <MenuItem>
             <Link href={"/create"}>Create post</Link>
           </MenuItem>
-          <MenuItem>Add item</MenuItem>
+          <MenuItem>Add item clone feature</MenuItem>
         </Menu>
       </Dropdown>
       <Routes>
